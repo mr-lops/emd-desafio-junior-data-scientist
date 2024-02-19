@@ -1,4 +1,4 @@
--- Pergunta 01	|	Resposta: foi aberto 73 chamados
+-- Pergunta 01	|	Resposta: foram abertos 73 chamados
 SELECT Count(*) AS total_chamados
 FROM `datario.administracao_servicos_publicos.chamado_1746` 
 WHERE DATE(data_inicio) = '2023-04-01'
@@ -44,7 +44,7 @@ LIMIT 1;
 
 
 -- Pergunta 05	|	Resposta: Existe um chamado, com id 18516246, que não esta associado nenhuma informação de localização
-SELECT COUNT(*)
+SELECT COUNT(*) AS qtd
 FROM `datario.administracao_servicos_publicos.chamado_1746` c
 LEFT JOIN `datario.dados_mestres.bairro` b
 ON c.id_bairro = b.id_bairro
@@ -53,11 +53,11 @@ WHERE DATE(c.data_inicio) = '2023-04-01'
     AND (c.id_bairro IS NULL
       OR b.subprefeitura IS NULL);
 /*  
-    Apos uma breve analise, conclui que grande parte dos chamados que não tem informações de localização estão com a situação "encerrado", 
+    Apos uma breve analise, conclui-se que grande parte dos chamados que não tem informações de localização estão com a situação "encerrado", 
   a possibilidade de que ao finalizar o chamado não esteja colocando informações de localização como bairro
 */
 -- Pode ser verificado utilizando a consulta abaixo
-SELECT situacao, count(situacao)
+SELECT situacao, count(situacao) AS qtd
 FROM `datario.administracao_servicos_publicos.chamado_1746`
 WHERE data_particao = "2023-04-01"
     AND id_bairro IS NULL
@@ -95,8 +95,8 @@ ORDER BY 2 DESC;
 
 
 
--- Pergunta 09	|	Resposta: Rock in Rio, com uma media diaria de 119.14 chamados abertos com o subtipo "Perturbação do sossego"
-SELECT evento, ROUND(AVG(qtd_chamados_abertos), 2) AS media_diaria
+-- Pergunta 09	|	Resposta: Rock in Rio, com uma média diária de aproximadamente 119 chamados abertos com o subtipo "Perturbação do sossego"
+SELECT evento, ROUND(AVG(qtd_chamados_abertos)) AS media_diaria
 FROM (
       SELECT DATE(c.data_inicio), e.evento, Count(*) AS qtd_chamados_abertos
       FROM `datario.administracao_servicos_publicos.chamado_1746` c
@@ -113,11 +113,11 @@ ORDER BY 2 DESC;
 
 -- Pergunta 10
 /*
-Resposta: Apos realizar um comparativo entre a media diaria de chamados abertos entre os eventos e 
-e periodo de 2022|2023. Chegou-se a conclusão de que a media diaria de chamados abertos do periodo é maior que a 
+Resposta: Após realizar um comparativo entre a média diária de chamados abertos entre os eventos e 
+e periodo de 2022|2023. Chegou-se a conclusão de que a média diária de chamados abertos do periodo é maior que a 
 do Carnaval e Reveillon, mas não é maior do que o Rock in Rio
 */
-(SELECT evento, ROUND(AVG(qtd_chamados_abertos), 2) AS media_diaria
+(SELECT evento, ROUND(AVG(qtd_chamados_abertos)) AS media_diaria
 FROM (
       SELECT DATE(c.data_inicio), e.evento, Count(*) AS qtd_chamados_abertos
       FROM `datario.administracao_servicos_publicos.chamado_1746` c
@@ -130,7 +130,7 @@ FROM (
 GROUP BY evento
 )
 UNION ALL
-(SELECT "periodo_2022_2023" AS evento,ROUND(AVG(qtd_chamados_abertos), 2) AS media_diaria
+(SELECT "periodo_2022_2023" AS evento,ROUND(AVG(qtd_chamados_abertos)) AS media_diaria
 FROM (
   SELECT DATE(data_inicio) AS data_chamado, Count(*) AS qtd_chamados_abertos
   FROM `datario.administracao_servicos_publicos.chamado_1746` 
