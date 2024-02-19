@@ -1,52 +1,41 @@
-# Desafio Técnico - Cientista de Dados Júnior
+# Resolução do desafio técnico para Cientista de Dados Júnior no Escritório Municipal de Dados do Rio de Janeiro
 
-## Descrição
+## Índice
 
-Bem-vindo ao desafio técnico para a vaga de Cientista de Dados Júnior no Escritório Municipal de Dados do Rio de Janeiro! Este desafio tem o objetivo de avaliar suas habilidades técnicas em manipulação de dados, consulta SQL, análise de dados e visualização de dados utilizando ferramentas como BigQuery e Python. A **data limite** do seu último commit no repositório é de **25/02/2024 às 23:59 UTC-3**.
+- [Sobre](#about)
+- [Conjunto de Dados Utilizados no Desafio](#dataset)
+- [Como rodar o desafio com SQL](#runsql)
+- [Como rodar o desafio com Python](#runpython)
+- [Como rodar o desafio com PowerBI](#runpowerbi)
+<br>
 
-### Objetivo
+## Sobre <a name = "about"></a>
 
-O objetivo deste desafio é realizar análises exploratórias em conjuntos de dados públicos disponíveis no BigQuery, responder a perguntas específicas sobre esses dados utilizando SQL e Python, e criar visualizações informativas e visualmente atraentes.
 
-#### Observação
+O desafio técnico para a vaga de Cientista de Dados Júnior no Escritório Municipal de Dados do Rio de Janeiro tem como objetivo de avaliar minhas habilidades técnicas, respondendo perguntas específicas sobre os dados disponibilizados utilizando SQL, Python, BigQuery e ferramentas de visualização.
 
-É esperado que você possa não ter tido contato prévio com algumas das tecnologias solicitadas no desafio, e isso é intencional. Parte da avaliação consiste em verificar se você é capaz de aprender rapidamente e produzir resultados após estudar as tecnologias por algum tempo. Por essa razão, o desafio tem uma duração de 15 dias, permitindo que você tenha tempo para estudar e aprender antes de enviar suas respostas.
+## Conjunto de Dados Utilizados no Desafio<a name = "dataset"></a>
 
-### Conjunto de Dados
-
-Os conjuntos de dados que serão utilizados neste desafio são:
+Os conjuntos de dados que serão utilizados no desafio são:
 
 - **Chamados do 1746:** Dados relacionados a chamados de serviços públicos na cidade do Rio de Janeiro. O caminho da tabela é : `datario.administracao_servicos_publicos.chamado_1746`
 - **Bairros do Rio de Janeiro:** Dados sobre os bairros da cidade do Rio de Janeiro - RJ. O caminho da tabela é: `datario.dados_mestres.bairro`
 - **Ocupação Hoteleira em Grandes Eventos no Rio**: Dados contendo o período de duração de alguns grandes eventos que ocorreram no Rio de Janeiro em 2022 e 2023 e a taxa de ocupação hoteleira da cidade nesses períodos. O caminho da tabela é: `datario.turismo_fluxo_visitantes.rede_hoteleira_ocupacao_eventos`
 
-### Ferramentas e Recursos
+## Como rodar o desafio com SQL <a name = "runsql"></a>
 
-Você precisará de acesso ao Google Cloud Platform (GCP) para utilizar o BigQuery e consultar os dados públicos disponíveis no projeto `datario`. Além disso, vamos utilizar a biblioteca `basedosdados` em Python para acessar os dados do BigQuery.
+### Requisitos
+- <a href="https://docs.dados.rio/tutoriais/como-acessar-dados/#como-criar-uma-conta-na-gcp">Conta GCP</a>
+- <a href="https://docs.dados.rio/tutoriais/como-acessar-dados">Acesso os dados do Desafio</a>
 
-- Tutorial para acessar dados no BigQuery, desde a criação da conta no GCP até consultar os dados utilizando SQL e Python: [Como acessar dados no BigQuery](https://docs.dados.rio/tutoriais/como-acessar-dados/)
 
-### Perguntas do Desafio
+Após ter criado uma conta no GCP e realizado o acesso aos dados do desafio pelo BigQuery, crie uma consulta SQL no BigQuery e execute individualmente os comandos localizados no arquivo <b>analise_sql.sql</b> para visualizar a resolução das perguntas.
 
-As perguntas do desafio estão detalhadas no arquivo `perguntas_desafio.md`.
+## Como rodar o desafio com Python <a name = "runpython"></a>
 
-## Etapas
+### Requisitos
+- <a href="https://colab.research.google.com/notebooks/welcome.ipynb?hl=pt-BR">Conta GCP</a>
+- <a href="https://docs.dados.rio/tutoriais/como-acessar-dados/#como-criar-uma-conta-na-gcp">Conta no Google Colab</a>
+- <a href="https://docs.dados.rio/tutoriais/como-acessar-dados">Acesso os dados do Desafio</a>
 
-1. Siga o tutorial acima para criar sua conta no GCP e aprender como utilizar o BigQuery para consultar os dados.
-2. Faça um fork desse repositório.
-3. Utilize SQL para resolver todas as questões contidas no arquivo `perguntas_desafio.md` no BigQuery. Salve suas respostas em um arquivo `analise_sql.sql`.
-4. Utilize Python e pandas para resolver todas as questões contidas no arquivo `perguntas_desafio.md`. Salve suas respostas em um arquivo `analise_python.py` ou `analise_python.ipynb`. Para acessar os dados do BigQuery no python, siga o tutorial acima e utilize a biblioteca `basedosdados`.
-6. Utilize o LookerStudio, Power BI, StreamLit, Tableau ou qualquer outra ferramenta de visualização de sua preferência para criar visualizações informativas dos dados das 3 tabelas. Suas visualizações não precisam se limitar apenas aos resultados das análises; é encorajado que você explore os dados e crie visualizações interessantes sobre eles.
-7. Faça commits incrementais à medida que trabalha no desafio e, finalmente, faça push do seu código para o seu repositório no GitHub. Seu repositório deve conter um README com todos os passos necessários para rodar seu código e ver a visualização de dados que você criou.
-
-### Dúvidas
-
-Se tiver alguma dúvida ou precisar de esclarecimentos adicionais sobre o desafio, entre em contato pelo email escritoriodedados@gmail.com.
-
-Boa sorte e estamos ansiosos para ver suas soluções! 
-
----
-
-**Escritório de Dados**  
-**Prefeitura da Cidade do Rio de Janeiro**
 
