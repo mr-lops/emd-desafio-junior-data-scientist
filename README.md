@@ -46,4 +46,4 @@ Após ter criado uma conta no GCP e realizado o acesso aos dados do desafio pelo
 
 - <a href="https://www.microsoft.com/pt-br/download/details.aspx?id=58494">Power BI</a>
 
-
+Com o Power BI Desktop instalado, abra o arquivo <b>analise_powerbi.pbix</b>.
